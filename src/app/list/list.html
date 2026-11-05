@@ -1,0 +1,36 @@
+
+
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+   
+      <div class="navbar-nav">
+        
+        <a routerLink="/list" class="nav-link" >Homegage/List</a>
+        <a routerLink="/create" class="nav-link" >Create</a>
+        
+      
+    </div>
+  </div>
+</nav>
+
+<table  class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">NAME</th>
+      <th scope="col">JOB</th>
+      <th scope="col">AGE</th>
+      <th scope="col">SALARY</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of service.developers">
+      <td>{{item.id}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.job}}</td>
+      <td>{{item.age}}</td>
+      <td>{{item.salary}}</td>
+    </tr>
+    
+  </tbody>
+</table>

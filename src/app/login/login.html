@@ -1,0 +1,7 @@
+<label>Név:</label>
+<input type="text" [(ngModel)]="loginModel.username">
+<label>Passwort:</label>
+<input type="password" [(ngModel)]="loginModel.password">
+<button (click)="authService.login(loginModel)" type="btn btn-primary">Belepes</button>
+
+

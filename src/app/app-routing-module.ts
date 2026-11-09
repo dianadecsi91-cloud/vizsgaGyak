@@ -4,14 +4,18 @@ import { List } from './list/list';
 import { Create } from './create/create';
 import { Delete } from './delete/delete';
 import { Edit } from './edit/edit';
+import { Login } from './login/login';
+import { Navbar } from './navbar/navbar';
 
 const routes: Routes = [
-  
+   {path:"navbar", component: Navbar},
   {path: "list" , component: List},
   {path: "create", component: Create},
   {path: "delete", component: Delete},
   {path: "edit", component: Edit},
-  {path: "", redirectTo: "list", pathMatch: "full"},
+  {path: "login", component: Login},
+  
+ {path: "", redirectTo: "list", pathMatch: "full"},
    {path: "**", redirectTo: "list", pathMatch: "full"}
 ];
 

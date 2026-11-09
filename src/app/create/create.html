@@ -1,1 +1,12 @@
-<h1>Create developer</h1>>
+<label>Name:</label>
+<input type="text" class="form-control" [(ngModel)]="developer.name">
+<label>Job:</label>
+<input type="text" class="form-control" [(ngModel)]="developer.job">
+<label>Age:</label>
+<input type="text" class="form-control" [(ngModel)]="developer.age">
+<label>Salary:</label>
+<input type="text" class="form-control" [(ngModel)]="developer.salary">
+<button (click)="create()" class="btn btn-primary">Create</button>
+
+
+

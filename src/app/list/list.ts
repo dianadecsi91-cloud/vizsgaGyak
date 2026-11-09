@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Developer } from '../developer';
 import { DeveloperService } from '../developer.service';
 import { HttpClient } from '@angular/common/http';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-list',
@@ -12,7 +13,8 @@ import { HttpClient } from '@angular/common/http';
 export class List {
   developer: Developer= new Developer()
 
-  constructor(public service: DeveloperService, private http: HttpClient){
+  constructor(public service: DeveloperService, private http: HttpClient, public authService: AuthService){
 
   }
+  
 }

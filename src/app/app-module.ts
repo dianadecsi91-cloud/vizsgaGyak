@@ -9,10 +9,12 @@ import { Delete } from './delete/delete';
 import { Create } from './create/create';
 import { FormsModule } from '@angular/forms';
 import { HttpClient, provideHttpClient } from '@angular/common/http';
+import { Login } from './login/login';
+import { Navbar } from './navbar/navbar';
 
 @NgModule({
-  declarations: [App, List, Edit, Delete, Create],
-  imports: [BrowserModule, AppRoutingModule,FormsModule],
+  declarations: [App, List, Edit, Delete, Create, Login, Navbar],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideBrowserGlobalErrorListeners(), provideHttpClient()],
   bootstrap: [App],
 })

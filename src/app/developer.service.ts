@@ -9,7 +9,7 @@ export class DeveloperService {
   developers: Developer[] = [];
 
   constructor(private http: HttpClient) {
-this.read();
+this.read(); 
 
   }
   read() {
@@ -19,6 +19,9 @@ this.read();
 
   save() { localStorage.setItem("developer_DB", JSON.stringify(this.developers)) }
 
+  create(developer: Developer){
+    this.developers.push(developer);
+  }
 }
 
 

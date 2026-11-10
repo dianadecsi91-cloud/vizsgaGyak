@@ -12,7 +12,7 @@ const routes: Routes = [
   {path: "list" , component: List},
   {path: "create", component: Create},
   {path: "delete", component: Delete},
-  {path: "edit", component: Edit},
+  {path: "edit/:id", component: Edit},
   {path: "login", component: Login},
   
  {path: "", redirectTo: "list", pathMatch: "full"},

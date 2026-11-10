@@ -15,13 +15,40 @@
   </thead>
   <tbody>
     <tr *ngFor="let item of service.developers; let i=index">
-      <td>{{item.getShortId()}}</td>
-      <td>{{item.name}} <img src="{{item.image}}" height="40" class="rounded-circle"> </td>
+<td>
+  <a [routerLink]="['/edit', item.id]">{{ item.getShortId() }}</a>
+</td>      <td>{{item.name}} <img src="{{item.image}}" height="40" class="rounded-circle"> </td>
       <td>{{item.job}}</td>
       <td>{{item.age}}</td>
       <td>{{item.getFormattedSalary()}}</td>
-      <td><button (click)="delete2(i)" type="button" class="btn btn-danger">Törlés</button></td>
+    <td>
+  <button type="button" class="btn btn-danger"
+          (click)="openEdit(item)"
+          data-bs-toggle="modal" data-bs-target="#editModal">
+    Edit2
+  </button>
+</td>   
     </tr>
     
   </tbody>
 </table>
+<div class="modal fade" id="editModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Szerkesztés</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <input class="form-control mb-2" [(ngModel)]="selected.name" placeholder="Név">
+        <input class="form-control mb-2" [(ngModel)]="selected.job" placeholder="Munka">
+        <input class="form-control mb-2" type="number" [(ngModel)]="selected.age" placeholder="Kor">
+        <input class="form-control mb-2" type="number" [(ngModel)]="selected.salary" placeholder="Fizetés">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Mégse</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="saveEdit()">Mentés</button>
+      </div>
+    </div>
+  </div>
+</div>

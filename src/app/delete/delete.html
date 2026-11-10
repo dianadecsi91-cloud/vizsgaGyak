@@ -1,1 +1,6 @@
-<p>delete works!</p>
+<select [(ngModel)]="developer" class="form-select" aria-label="Default select example">
+
+    <option selected [ngValue]="item" *ngFor="let item of developerService.developers">{{item.name}}</option>
+
+</select>
+<button (click)="delete()" type="button" class="btn btn-danger">Törlés</button>

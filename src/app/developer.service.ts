@@ -22,6 +22,16 @@ this.read();
   create(developer: Developer){
     this.developers.push(developer);
   }
+
+  delete(developer: Developer){
+    this.developers= this.developers.filter(x=> x.name !== developer.name)
+    this.save()
+  }
+  delete2(index: number){
+    this.developers.splice(index,1)
+
+  }
+
 }
 
 

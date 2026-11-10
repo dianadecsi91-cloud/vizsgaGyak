@@ -16,5 +16,8 @@ export class List {
   constructor(public service: DeveloperService, private http: HttpClient, public authService: AuthService){
 
   }
+delete2(index: number){
+  this.service.delete2(index)
+}
   
 }

@@ -5,6 +5,8 @@
         
         <a routerLink="/list" class="nav-link" >Homegage/List</a>
         <a routerLink="/create" class="nav-link" *ngIf="authService.isLoggedIn()">Create</a>
+        <a routerLink="/delete" class="nav-link" *ngIf="authService.isLoggedIn()" >Delete</a>
+
         <a routerLink="/login" class="nav-link" *ngIf="!authService.isLoggedIn()">Login</a>
         <a (click)="authService.logout()" routerLink="/login" class="nav-link" *ngIf="authService.isLoggedIn()" >Logout</a>
 

@@ -10,7 +10,9 @@
       <th scope="col">JOB</th>
       <th scope="col">AGE</th>
       <th scope="col">SALARY</th>
-      <th scope="col">EXTRA</th>
+      <th scope="col">DELETE</th>
+      <th scope="col">EDIT</th>
+
     </tr>
   </thead>
   <tbody>
@@ -21,6 +23,7 @@
       <td>{{item.job}}</td>
       <td>{{item.age}}</td>
       <td>{{item.getFormattedSalary()}}</td>
+      <td><button (click)="delete2(i)" type="button" class="btn btn-success">Delete</button></td>
     <td>
   <button type="button" class="btn btn-danger"
           (click)="openEdit(item)"

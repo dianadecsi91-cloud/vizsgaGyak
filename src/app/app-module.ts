@@ -11,9 +11,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { Login } from './login/login';
 import { Navbar } from './navbar/navbar';
+import { Stat } from './stat/stat';
 
 @NgModule({
-  declarations: [App, List, Edit, Delete, Create, Login, Navbar],
+  declarations: [App, List, Edit, Delete, Create, Login, Navbar, Stat],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideBrowserGlobalErrorListeners(), provideHttpClient()],
   bootstrap: [App],

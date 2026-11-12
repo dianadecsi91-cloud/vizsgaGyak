@@ -42,4 +42,19 @@ export class Delete {
     this.developers = this.developers.filter(x => x.id !== this.developer.id)
     this.save()
     this.router.navigateByUrl("list")
-  }*/
+  }
+    
+  Disabled
+<select [(ngModel)]="developer" class="form-select mb-2">
+    <option [ngValue]="null" disabled selected>Select...</option>
+    <option
+        [ngValue]="dev"
+        [disabled]="dev.name.includes('Select')"
+        *ngFor="let dev of service.developers"
+    >
+        {{ dev.name }}
+    </option>
+</select>
+<button class="btn btn-sm btn-danger" (click)="delete()" [disabled]="developer === null">
+    Delete developer
+</button>*/

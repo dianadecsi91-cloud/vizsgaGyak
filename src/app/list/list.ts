@@ -41,5 +41,36 @@ delete2(index: number){
 /*alertId(developer: Developer): void {
   alert(developer.id);alertId(item)
 }*/
-  
+  /*buttonDisabled(): boolean {
+    if(this.developer.name.length < 5) return true
+    if(this.developer.job.length < 5) return true
+    if(this.developer.age! < 18) return true
+    if(this.developer.salary! < 50000) return true
+    return false
+  }
+    check(): void {
+    this.tipCounter++
+    if ( this.tip ==this.generatedNumber) {
+      // játék vége
+      this.guesses.push(new GameItem(this.tip, "JÁTÉK VÉGE"))
+      this.endOfGame = true
+    } else if (this.tip >this.generatedNumber ) {
+      // nagyobbra gondoltam
+      this.guesses.push(new GameItem(this.tip, "NAGYOBBRA GONDOLTAM"))
+    } else {
+      // kisebbre gondoltam
+      this.guesses.push(new GameItem(this.tip, "KISEBBRE GONDOLTAM"))
+    }
+  }
+    
+  ngclass szinezés: <tr *ngFor="let dev of service.developers; index as i" class="align-middle">
+            <td>
+                <span class="badge rounded-pill ms-2" [ngClass]="dev.salary! > getAvgSalaryFromService ? 'bg-success' : 'bg-danger'">
+                    {{ i+1 }}
+                     <span
+                                class="badge"
+                                [ngClass]="item.watched ? 'text-bg-success' : 'text-bg-warning'">
+                                {{ item.watched ? 'Megnézve' : 'Még nem láttam' }}
+                            </span>
+                </span>*/
 }

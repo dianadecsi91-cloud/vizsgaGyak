@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { StatisticService } from '../statistic.service';
 
 @Component({
@@ -9,5 +10,5 @@ import { StatisticService } from '../statistic.service';
 })
 export class Stat {
 
-  constructor(){}
+  constructor(public statisticService: StatisticService){}
 }

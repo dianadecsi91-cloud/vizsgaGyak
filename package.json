@@ -20,6 +20,7 @@
     "guid-typescript": "^1.0.9",
     "prompt-sync": "^4.2.0",
     "rxjs": "~7.8.0",
+    "sass": "^1.108.2",
     "tslib": "^2.3.0"
   },
   "devDependencies": {

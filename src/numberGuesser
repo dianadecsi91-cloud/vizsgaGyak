@@ -1,0 +1,128 @@
+ ts: generatedNumber: number = this.getRandomInteger(10,40)
+  guesses: GameItem[] = []
+  tip: number = 0
+  endOfGame: boolean = false
+  tipCounter: number = 0
+
+  getRandomInteger(min: number, max: number): number {
+    return Math.floor(Math.random() * (max - min + 1)) + min
+  }
+
+  getTipClass(gameItem: GameItem): string {
+    if (gameItem.response.includes("VÉGE")) return "alert alert-success"
+    else return "alert alert-danger"
+
+    // return gameItem.response.includes("VÉGE") ? "goodTip" : "badTip"
+
+    // if (gameItem.response.includes("VÉGE")) {
+    //   return "goodTip"
+    // } else {
+    //   return "badTip"
+    // }
+  }
+
+  check(): void {
+    this.tipCounter++
+    if ( this.tip ==this.generatedNumber) {
+      // játék vége
+      this.guesses.push(new GameItem(this.tip, "JÁTÉK VÉGE"))
+      this.endOfGame = true
+    } else if (this.tip >this.generatedNumber ) {
+      // nagyobbra gondoltam
+      this.guesses.push(new GameItem(this.tip, "NAGYOBBRA GONDOLTAM"))
+    } else {
+      // kisebbre gondoltam
+      this.guesses.push(new GameItem(this.tip, "KISEBBRE GONDOLTAM"))
+    }
+  }
+export class GameItem {
+    guess: number = 0
+    response: string = ""
+
+    constructor(guess: number, response: string) {
+        this.guess = guess
+        this.response = response
+    }
+}
+html: 
+<h1>Number Guesser App</h1>
+  <div *ngIf="!endOfGame">
+    <input class="form-control" type="number" placeholder="Your tip..." [(ngModel)]="tip">
+    <br>
+    <button class="btn btn-primary" (click)="check()">Check</button>
+  </div>
+  <div *ngIf="endOfGame">
+    <h3><span class="badge text-bg-primary">{{ tipCounter }}</span> lépésben kitaláltad!</h3>
+  </div>
+  <hr>
+  <!-- <p *ngFor="let item of guesses" [ngClass]="item.response.includes('VÉGE') ? 'goodTip' : 'badTip'">
+    [{{ item.guess }}] &rarr; {{ item.response }}
+  </p> -->
+
+  <p *ngFor="let item of guesses" [ngClass]="getTipClass(item)" class="tip-result">
+    [{{ item.guess }}] &rarr; {{ item.response }}
+  </p>
+</div>
+ title: string = "Counter App"
+  counter: number = 0
+
+  inc() {
+    this.counter++
+  }
+
+  dec() {
+    this.counter--
+  }
+
+  export class ToDo {
+    content: string = ""
+    priority: boolean = false
+    done: boolean = false
+    timeStamp: Date = new Date()
+
+    constructor(content: string = "", done: boolean = false) {
+        this.content = content
+        this.done = done
+        // if (this.content.startsWith('!')) this.priority = true
+    }
+}
+add(): void {
+    if (this.newTodo.content.startsWith('!')) {
+      this.newTodo.priority = true
+      this.newTodo.content = this.newTodo.content.slice(1)
+    }
+    this.todos.unshift({ ...this.newTodo })
+    this.newTodo.content = ""
+    this.newTodo.priority = false
+  }
+  <input class="form-control mb-2" type="text" placeholder="To do this..." [(ngModel)]="newTodo.content">
+  <button class="btn btn-sm btn-primary me-3" (click)="add()">Add Todo</button>
+  <button class="btn btn-sm btn-success me-3" (click)="save()">Save</button>
+  <button class="btn btn-sm btn-warning me-3" (click)="load()">Load</button>
+  <hr>
+  <div>
+    Total: <span class="badge rounded-pill text-bg-primary me-3">{{ todos.length }}</span>
+    Finished: <span class="badge rounded-pill text-bg-success me-3">{{ countFinishedTodos() }}</span>
+    Missing: <span class="badge rounded-pill text-bg-warning">{{ todos.length - countFinishedTodos() }}</span>
+  </div>
+  <hr>
+  <div *ngFor="let item of todos" (click)="markTodoAsDone(item)"
+    [ngClass]="{
+      'border-priority': item.priority,
+      'alert': true,
+      'alert-success': item.done,
+      'alert-secondary': !item.done
+    }"
+  >
+    <div class="row">
+      <div class="col-2">
+        <span class="badge rounded-pill text-bg-light">
+          {{ formatDate(item.timeStamp) }}
+        </span>
+      </div>
+      <div class="col" [ngClass]="{'done-icon': item.done}">
+        {{ item.content }}
+      </div>
+    </div>
+  </div>
+</div>

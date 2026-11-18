@@ -1,0 +1,84 @@
+/* változók deklarációja */
+$primary-color: rgb(40, 170, 226)
+$bg-color: rgb(244, 227, 143)
+
+
+
+
+// mixinek
+=rounded-corners($radius: 5px)  //vagy @
+    border-radius: $radius
+    margin: 5px
+
+=border-color($color: red)
+    border: 5px solid $color
+
+=drop-shadow()
+    -webkit-box-shadow: 5px 5px 22px -8px rgba(122,116,122,1)
+    -moz-box-shadow: 5px 5px 22px -8px rgba(122,116,122,1)
+    box-shadow: 5px 5px 22px -8px rgba(122,116,122,1)
+
+
+=flexbox
+    display: flex
+    flex-direction: column
+
+body
+    background-color: $bg-color
+    padding: 100px
+
+.container
+    +rounded-corners(30px)
+    +drop-shadow()
+    +border-color()
+    background-color: $primary-color
+    padding: 13px 5px 10px 5px
+
+p
+    +border-color(green)
+    background-color: rgb(211, 211, 211)
+    padding: 13px 5px 10px 5px
+
+a
+    +drop-shadow()
+    padding: 13px 5px 10px 5px
+
+.btn
+    background-color: rgb(238, 10, 10)
+    padding: 10px 20px
+    cursor: pointer
+    +rounded-corners()
+
+.btn-success
+    @extend .btn //kiterjesztem a btn osztalyt mar hasznalom a htmlben
+    background-color: green
+
+
+
+// & jellel valtozok, @ includdal egy mixin(fuggveny, tartalmat behuzni)
+// @use "mixins" as *; /csoport+bol behuzas/
+// sass ban nem hasznalok {} csak behuzast scssben jelekkkel és ; a sorok között!!
+// + jellel huzom be az osztalyokat
+//  npm install -g sass +sass styles.sass styles.css terminal parancs \
+//.container
+   // background-color: red
+   // p
+   //     color: blue  -behuzas szabaly
+
+   // Media styles
+//@media (max-width: $screen-md)
+    //body
+        //background-color: $desktop-background-color
+
+//@media (max-width: $screen-sm)
+   // body
+        //background-color: $mobile-background-color
+    //.container
+       // @include flexbox
+        //margin-bottom: $margin-size-lg
+
+        //$screen-md: 992px
+//$screen-sm: 576px
+//$desktop-background-color: rgb(230, 230, 230)
+//$mobile-background-color: rgb(200, 220, 240)
+//$margin-size-lg: 20px

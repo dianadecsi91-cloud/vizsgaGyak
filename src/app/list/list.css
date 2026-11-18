@@ -1,0 +1,44 @@
+@charset "UTF-8";
+/* változók deklarációja */
+body {
+  background-color: rgb(244, 227, 143);
+  padding: 100px;
+}
+
+.container {
+  border-radius: 30px;
+  margin: 5px;
+  -webkit-box-shadow: 5px 5px 22px -8px rgb(122, 116, 122);
+  -moz-box-shadow: 5px 5px 22px -8px rgb(122, 116, 122);
+  box-shadow: 5px 5px 22px -8px rgb(122, 116, 122);
+  border: 5px solid red;
+  background-color: rgb(40, 170, 226);
+  padding: 13px 5px 10px 5px;
+}
+
+p {
+  border: 5px solid green;
+  background-color: rgb(211, 211, 211);
+  padding: 13px 5px 10px 5px;
+}
+
+a {
+  -webkit-box-shadow: 5px 5px 22px -8px rgb(122, 116, 122);
+  -moz-box-shadow: 5px 5px 22px -8px rgb(122, 116, 122);
+  box-shadow: 5px 5px 22px -8px rgb(122, 116, 122);
+  padding: 13px 5px 10px 5px;
+}
+
+.btn, .btn-success {
+  background-color: rgb(238, 10, 10);
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.btn-success {
+  background-color: green;
+}
+
+/*# sourceMappingURL=list.css.map */

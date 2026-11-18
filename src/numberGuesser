@@ -126,3 +126,26 @@ add(): void {
     </div>
   </div>
 </div>
+
+
+oop. constructor() {
+		let x: XYZ = {
+			lorem: "...",
+			ipsum: 444,
+		}
+
+		let animals: IAnimal[] = []
+
+		animals.push(new Dog("Lajos", "Buksi"))
+		animals.push(new Dog("Ferenc", "Mizse"))
+		animals.push(new Cat("Cirmi"))
+		animals.push(new SiamiCat("Siamiau"))
+
+		console.log(animals)
+		console.log("\n\n")
+
+		animals.forEach(x => {
+			x.hello()
+		})
+	}
+}
